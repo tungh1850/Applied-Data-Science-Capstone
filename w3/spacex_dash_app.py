@@ -14,6 +14,7 @@ min_payload = spacex_df['Payload Mass (kg)'].min()
 
 # Create a dash application
 app = dash.Dash(__name__)
+server = app.server
 # create parameter
 in_ids =['site-dropdown','payload-slider']
 out_ids = ['success-pie-chart', 'success-payload-scatter-chart']
@@ -121,7 +122,7 @@ def get_pie_chart(entered_site, payload_size):
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
 
 
 
